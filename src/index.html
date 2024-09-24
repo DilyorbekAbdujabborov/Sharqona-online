@@ -4,22 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🌐 WebSocket Server</title>
-    <link rel="stylesheet" href="http://${location.hostname}/styles.css">
+    <title>🌐 WebSocket Server Application</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Dynamically add users.js script based on server hostname -->
+    <script>
+        const script = document.createElement('script');
+        script.src = `./users.js`; // Adjust path as necessary
+        script.defer = true;
+        document.head.appendChild(script);
+    </script>
 </head>
 
 <body>
     <header>
-        <h1>🌐 Welcome to the WebSocket Server Application!</h1>
-        <p>Real-time user tracking and origin logging made easy! 🎉</p>
-        <div>
-            <button onclick="changeLanguage('en')">English</button>
-            <button onclick="changeLanguage('uz')">O'zbekcha</button>
-        </div>
+        <nav class="navbar">
+            <div class="brand">
+                <h1 id="page-title">🌐 WebSocket Server Application</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#api">API Endpoint</a></li>
+                <li><a href="#connection">WebSocket</a></li>
+                <li><a href="#license">License</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="nav-button">
+                    <i class="fas fa-moon"></i> <span id="theme-text">Switch to Dark Mode</span>
+                </button>
+                <button id="lang-toggle" class="nav-button">
+                    <i class="fas fa-language"></i> <span id="lang-text">Switch to Uzbek</span>
+                </button>
+            </div>
+        </nav>
     </header>
 
     <main>
-        <section>
+        <section id="features">
             <h2>✨ Features</h2>
             <ul>
                 <li>🔄 Real-time tracking of online users</li>
@@ -28,14 +50,14 @@
             </ul>
         </section>
 
-        <section>
+        <section id="api">
             <h2>📡 API Endpoint</h2>
             <h3>Track User Origin</h3>
             <p>Send a POST request to the following endpoint:</p>
             <pre><code>POST /api/track</code></pre>
             <p>Request Body:</p>
             <pre><code>{
-    "origin": "<user-origin>"
+    "origin": "&lt;user-origin&gt;"
 }</code></pre>
             <p>Response:</p>
             <pre><code>{
@@ -43,14 +65,26 @@
 }</code></pre>
         </section>
 
-        <section>
+        <section id="connection">
             <h2>💬 WebSocket Connection</h2>
             <p>Connect to the WebSocket server at:</p>
             <pre><code>ws://localhost:3000</code></pre>
             <p>The server will notify you of the current number of online users! 🔔</p>
         </section>
 
-        <section>
+        <section id="usage">
+            <h2>✨ Using Simple Add the Script Tag</h2>
+            <p>To add the users.js script dynamically, include the following in your HTML:</p>
+            <pre><code>&lt;script&gt;
+    const script = document.createElement('script');
+    script.src = `http://${location.hostname}/users.js`;
+    script.defer = true;
+    document.head.appendChild(script);
+&lt;/script&gt;</code></pre>
+            <p>This script will load <code>users.js</code> from the server based on the current hostname.</p>
+        </section>
+
+        <section id="license">
             <h2>📜 License</h2>
             <p>This project is licensed under the MIT License. 📝</p>
         </section>
@@ -60,7 +94,7 @@
         <p>Made with ❤️ by D. Abdujabborov</p>
     </footer>
 
-    <script src="http://${location.hostname}/script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 
 // Track user origin
 app.post('/api/track', (req, res) => {
-    console.log(`User from: ${req.body.origin}`);
+    // console.log(`User from: ${req.body.origin}`);
     res.json({ message: 'Origin tracked. Happy track!!!' });
 });
 
@@ -33,14 +33,14 @@ const wss = new WebSocket.Server({ server });
 
 wss.on('connection', (ws) => {
     onlineUsers++;
-    console.log(`User connected. Online users: ${onlineUsers}`);
+    // console.log(`User connected. Online users: ${onlineUsers}`);
 
     // Notify all clients about the updated online user count
     broadcastOnlineCount();
 
     ws.on('close', () => {
         onlineUsers--;
-        console.log(`User disconnected. Online users: ${onlineUsers}`);
+        // console.log(`User disconnected. Online users: ${onlineUsers}`);
         broadcastOnlineCount();
     });
 });

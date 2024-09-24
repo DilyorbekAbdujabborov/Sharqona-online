@@ -1,90 +1,108 @@
-/* Umumiy sozlamalar */
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
+    background-color: #f4f4f4;
     color: #333;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-header {
-    background: linear-gradient(to right, #0072ff, #00c6ff);
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0072ff;
+    padding: 20px;
     color: white;
-    padding: 20px 0;
-    text-align: center;
 }
 
-h1 {
-    font-size: 2.5em;
+.brand h1 {
+    font-size: 1.5em;
     margin: 0;
 }
 
-h2 {
-    font-size: 1.8em;
-    margin-top: 20px;
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    font-size: 1em;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.nav-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-button {
+    background-color: white;
     color: #0072ff;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    background: #fff;
-    margin: 10px 0;
-    padding: 15px;
+    border: none;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* Asosiy qism */
-main {
-    max-width: 800px;
-    margin: 20px auto;
+.nav-button:hover {
+    background-color: #005bb5;
+    color: white;
+}
+
+.nav-button i {
+    margin-right: 5px;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #222;
+    color: #f4f4f4;
+}
+
+.navbar.dark-mode {
+    background-color: #1a73e8;
+}
+
+.nav-button.dark-mode {
+    background-color: #333;
+    color: white;
+}
+
+/* Section styling */
+section {
     padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
 }
 
-/* API bo'limi */
-pre {
-    background: #f4f4f4;
-    border-left: 5px solid #0072ff;
-    padding: 10px;
-    overflow: auto;
-    border-radius: 5px;
-}
-
-/* Footer */
 footer {
     text-align: center;
-    padding: 20px 0;
-    background: #0072ff;
+    padding: 20px;
+    background-color: #0072ff;
     color: white;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-/* Media Queries */
-@media (max-width: 600px) {
-    h1 {
-        font-size: 2em;
-    }
-
-    h2 {
-        font-size: 1.5em;
-    }
-
-    main {
-        margin: 10px;
-        padding: 10px;
-    }
-
-    li {
-        padding: 10px;
-    }
 }
