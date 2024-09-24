@@ -1,0 +1,21 @@
+{
+  "name": "online-users",
+  "version": "1.0.0",
+  "main": "main",
+  "scripts": {
+    "start": "node main",
+    "dev": "nodemon main"
+  },
+  "keywords": [],
+  "author": "Dilyorbek Abdujabborov",
+  "license": "ISC",
+  "description": "https://github.com/DilyorbekAbdujabborov/Sharqona-online",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "express-session": "^1.18.0",
+    "nodemon": "^3.1.7",
+    "ws": "^8.18.0"
+  }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌐 WebSocket Server</title>
+    <link rel="stylesheet" href="http://${location.hostname}/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>🌐 Welcome to the WebSocket Server Application!</h1>
+        <p>Real-time user tracking and origin logging made easy! 🎉</p>
+        <div>
+            <button onclick="changeLanguage('en')">English</button>
+            <button onclick="changeLanguage('uz')">O'zbekcha</button>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2>✨ Features</h2>
+            <ul>
+                <li>🔄 Real-time tracking of online users</li>
+                <li>📍 User origin tracking via API</li>
+                <li>📂 Optional static file serving</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>📡 API Endpoint</h2>
+            <h3>Track User Origin</h3>
+            <p>Send a POST request to the following endpoint:</p>
+            <pre><code>POST /api/track</code></pre>
+            <p>Request Body:</p>
+            <pre><code>{
+    "origin": "<user-origin>"
+}</code></pre>
+            <p>Response:</p>
+            <pre><code>{
+    "message": "Origin tracked"
+}</code></pre>
+        </section>
+
+        <section>
+            <h2>💬 WebSocket Connection</h2>
+            <p>Connect to the WebSocket server at:</p>
+            <pre><code>ws://localhost:3000</code></pre>
+            <p>The server will notify you of the current number of online users! 🔔</p>
+        </section>
+
+        <section>
+            <h2>📜 License</h2>
+            <p>This project is licensed under the MIT License. 📝</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Made with ❤️ by D. Abdujabborov</p>
+    </footer>
+
+    <script src="http://${location.hostname}/script.js"></script>
+</body>
+
+</html>
