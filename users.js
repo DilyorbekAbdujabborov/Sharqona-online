@@ -36,7 +36,7 @@ function initialize() {
             dynamicContainer); // Add them to the body
 
         // Create a WebSocket connection
-        const ws = new WebSocket('ws://' + location.hostname + ':3000');
+        const ws = new WebSocket('ws://' + location.hostname);
 
         // Handle incoming messages from the server
         ws.onmessage = function (event) {
@@ -53,7 +53,7 @@ function initialize() {
         };
 
         // Track the user's origin using Fetch API
-        fetch('http://' + location.hostname + ':3000/api/track', {
+        fetch('http://' + location.hostname + 'api/track', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
